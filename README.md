@@ -13,14 +13,14 @@
   
 ```
 ### EVENTS
-- [x] Access the Design Requirements                       <progress value="100" max="100">100%</progress>
-- [ ] Design cc                                            <progress value="20" max="100">20%</progress>
-- [ ] Select suitable Model                                <progress value="60" max="100">60%</progress>
-- [ ] Impliment model                                      <progress value="0" max="100">0%</progress>
-- [ ] run Simulation                                       <progress value="0" max="100">0%</progress>
-- [ ] post processing                                      <progress value="0" max="100">0%</progress>
-- [ ] Analyse                                              <progress value="0" max="100">0%</progress>
-- [ ] Conclusion/Results                                   <progress value="0" max="100">0%</progress>
+- [x] ~~Access the Design Requirements~~                   
+- [ ] Design cc                                            
+- [ ] Select suitable Model                                
+- [ ] Impliment model                                      
+- [ ] run Simulation                                       
+- [ ] post processing                                      
+- [ ] Analyse                                              
+- [ ] Conclusion/Results                                   
 
 >[!WARNING]
 > SCARY SHIT IS HIGHLY UNSTABLE!!!
