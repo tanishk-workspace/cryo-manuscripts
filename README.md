@@ -4,10 +4,11 @@
  A[Access the Design Requirements]-->B[Design cc];
  A-->C[Select suitable Model];
  B-->D[Impliment model];
- C-->D[run Simulation];
- D-->E[post processing];
+ C-->D[run Simulation:crossed_fingers:];
+ D-->E[post processing:warning:];
  E-->F[Analyse];
- F-->G[Conclusion/Results];
+ F-->D
+ F-->G[Conclusion/Results:tada:];
   
 ```
 
