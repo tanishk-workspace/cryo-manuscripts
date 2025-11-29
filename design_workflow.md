@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
 
 A[1. Mission Requirements<br>• Thrust class<br>• Mission profile<br>• Reliability targets<br>• Constraints & budget]
@@ -17,3 +18,4 @@ G[7. Verification & Validation Planning<br>• Simulation verification<br>• Te
 H[8. Lifecycle & Programmatic Planning<br>• Manufacturing strategy<br>• Cost modeling<br>• Quality & inspection<br>• Maintenance planning]
 
 A --> B --> C --> D --> E --> F --> G --> H
+```
