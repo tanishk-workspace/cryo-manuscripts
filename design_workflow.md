@@ -19,3 +19,26 @@ H[8. Lifecycle & Programmatic Planning<br>• Manufacturing strategy<br>• Cost
 
 A --> B --> C --> D --> E --> F --> G --> H
 ```
+
+```mermaid
+flowchart TD
+
+A[1. Define Objectives & Scope<br>• Mixing trends<br>• Flow field patterns<br>• Turbulence & recirculation<br>• Non-dimensional, safe study] --> B
+
+B[2. Create Conceptual Geometry<br>• Pintle stem<br>• Annular gap<br>• Chamber inlet region<br>• Axisymmetric or sector model] --> C
+
+C[3. Generate Computational Mesh<br>• High gradients near pintle tip<br>• Boundary layer resolution<br>• AMR in shear zones] --> D
+
+D[4. Select Physical Models<br>• RANS or LES turbulence<br>• Multiphase optional<br>• Non-reacting flow<br>• Density/viscosity models] --> E
+
+E[5. Apply Boundary Conditions<br>• Dimensionless inlet flow<br>• Outlet pressure reference<br>• No-slip walls<br>• Symmetry if applicable] --> F
+
+F[6. Solve CFD Simulation<br>• Steady or transient<br>• CFL-controlled timesteps<br>• Residual & mass-balance checks] --> G
+
+G[7. Post-Process Results<br>• Velocity/Turbulence fields<br>• Recirculation zones<br>• Jet penetration trends<br>• Qualitative pressure drops] --> H
+
+H[8. Parametric Study<br>• Gap ratio variations<br>• Pintle-tip geometry differences<br>• Annular angle changes<br>• Non-dimensional performance trends] --> I
+
+I[9. Interpretation & Reporting<br>• Flow symmetry<br>• Mixing uniformity<br>• Relative performance trends<br>• Conceptual design feedback]
+
+```
