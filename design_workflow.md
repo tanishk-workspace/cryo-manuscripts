@@ -9,7 +9,7 @@ C[3. System-Level Performance Modeling<br>• Feasibility trends<br>• Nozzle e
 
 D[4. Key Component Concept Development<br>• Injector strategy<br>• Chamber material & cooling<br>• Nozzle concept family<br>• Stability architecture]
 
-E[5. Multidisciplinary Feasibility Analysis<br>• Thermal/structural models<br>• Flowfield studies (non-operational)<br>• Stability assessment<br>• Material trade studies]
+E[5. Multidisciplinary Feasibility Analysis<br>• Thermal/structural models<br>• Flowfield studies(non-operational)<br>• Stability assessment<br>• Material trade studies]
 
 F[6. Subsystem Integration Architecture<br>• Feed system layout<br>• Control & avionics logic<br>• Structural integration<br>• Safety & redundancy]
 
