@@ -14,7 +14,7 @@
 ```
 ### EVENTS
 - [x] ~~Access the Design Requirements~~                   
-- [ ] Design cc                                            
+- [x] ~~Design cc~~                                           
 - [ ] Select suitable Model                                
 - [ ] Impliment model                                      
 - [ ] run Simulation                                       
