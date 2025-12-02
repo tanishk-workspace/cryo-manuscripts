@@ -1,0 +1,62 @@
+FOAM_DICT/
+│
+├── 0/
+│   ├── p
+│   ├── U
+│   ├── T
+│   ├── rho
+│   ├── alphat
+│   ├── k
+│   ├── omega
+│   ├── YH2
+│   ├── YO2
+│   ├── YH2O              (products)
+│   ├── YO2_l             (optional liquid marker)
+│   └── other species...
+│
+├── constant/
+│   ├── chemistry
+│   │   ├── chemistryProperties
+│   │   └── thermophysicalProperties
+│   │
+│   ├── reactingCloud1Properties      (LOX spray)
+│   ├── g                              (gravity)
+│   ├── propertiesDict                 (phase properties)
+│   ├── combustionProperties
+│   ├── turbulenceProperties
+│   ├── LESProperties
+│   ├── thermophysicalProperties
+│   ├── radiationProperties (if used)
+│   ├── transportProperties
+│   ├── spraySubModels/
+│   │   ├── atomizationProperties
+│   │   ├── breakupProperties
+│   │   ├── collisionProperties
+│   │   ├── evaporationProperties
+│   │   └── wallInteractionProperties
+│   │
+│   ├── polyMesh/
+│   │   ├── blockMeshDict
+│   │   ├── boundary
+│   │   ├── points
+│   │   ├── faces
+│   │   └── owner, neighbour
+│   │
+│   └── regionProperties (if multi-region)
+│
+├── system/
+│   ├── controlDict
+│   ├── fvSchemes
+│   ├── fvSolution
+│   ├── decomposeParDict
+│   ├── sampling (optional)
+│   │   ├── probes
+│   │   └── surfaces
+│   ├── setFieldsDict
+│   ├── fvOptions
+│   └── topoSetDict (if needed)
+│
+└── postProcessing/
+    ├── probes/
+    ├── surfaces/
+    └── FFT/
