@@ -1,0 +1,26 @@
+dimensions      [0 0 0 0 0 0 0];
+internalField   uniform 0;
+
+boundaryField
+{
+    H2_annulus
+    {
+        type fixedValue;
+        value uniform 1.0;  // pure H2
+    }
+
+    LOX_centerHole
+    {
+        type zeroGradient;
+    }
+
+    outlet
+    {
+        type zeroGradient;
+    }
+
+    walls
+    {
+        type zeroGradient;
+    }
+}

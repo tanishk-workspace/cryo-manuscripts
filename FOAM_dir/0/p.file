@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*/
+
+dimensions      [1 -1 -2 0 0 0 0];
+internalField   uniform XXX;   // chamber static pressure (placeholder)
+
+boundaryField
+{
+    H2_annulus
+    {
+        type            totalPressure;
+        p0              uniform YYY;   // placeholder
+        gamma           1.4;
+        value           uniform XXX;
+    }
+
+    LOX_centerHole
+    {
+        type            zeroGradient;
+    }
+
+    outlet
+    {
+        type            waveTransmissive;
+        field           p;
+        gamma           1.4;
+        lInf            0.5;
+        value           uniform XXX;
+    }
+
+    walls
+    {
+        type            zeroGradient;
+    }
+}

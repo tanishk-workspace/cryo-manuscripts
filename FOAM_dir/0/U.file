@@ -1,0 +1,27 @@
+dimensions      [0 1 -1 0 0 0 0];
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    H2_annulus
+    {
+        type            fixedValue;
+        value           uniform (0 0 XXX);  // arbitrary inlet test velocity
+    }
+
+    LOX_centerHole
+    {
+        type            zeroGradient;       // spray handles droplet velocity
+    }
+
+    outlet
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform (0 0 0);
+    }
+
+    walls
+    {
+        type            noSlip;
+    }
+}

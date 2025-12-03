@@ -1,0 +1,28 @@
+thermoType
+{
+    type            hePsiThermo;
+    mixture         reactingMixture;
+    transport       sutherland;
+    thermo          janaf;
+    energy          sensibleEnthalpy;
+}
+
+mixture
+{
+    specie
+    {
+        nMoles      1;
+    }
+
+    thermodynamics
+    {
+        Hf          0;
+        Cp          0;
+    }
+
+    transport
+    {
+        mu          0;
+        kappa       0;
+    }
+}

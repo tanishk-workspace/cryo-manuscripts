@@ -1,0 +1,13 @@
+numberOfSubdomains 4;
+
+method          simple;
+
+simpleCoeffs
+{
+    n               (2 2 1);  // adjust to mesh
+    delta           0.001;
+}
+
+distributed     no;
+
+roots           ( );

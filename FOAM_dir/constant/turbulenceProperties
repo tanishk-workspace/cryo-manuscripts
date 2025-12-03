@@ -1,0 +1,10 @@
+simulationType  RAS;
+
+RAS
+{
+    RASModel     kOmegaSSTIDDES;
+    turbulence   on;
+    printCoeffs  on;
+    #delta cubeRootVol;
+    #delta maxDissipation;
+}

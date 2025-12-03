@@ -1,0 +1,10 @@
+dimensions      [0 2 -1 0 0 0 0];
+internalField   uniform 0;
+
+boundaryField
+{
+    defaultFaces
+    {
+        type zeroGradient;
+    }
+}

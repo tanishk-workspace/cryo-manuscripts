@@ -1,0 +1,25 @@
+sampling
+{
+    type            surfaces;
+    libs            ("libsampling.so");
+
+    fields
+    (
+        p
+        U
+        T
+        YH2
+        YO2
+        YH2O
+    );
+
+    surfaces
+    (
+        chamberCenter
+        {
+            type plane;
+            basePoint (0 0 0);
+            normalVector (0 0 1);
+        }
+    );
+}
