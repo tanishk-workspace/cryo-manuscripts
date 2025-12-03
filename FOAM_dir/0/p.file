@@ -1,16 +1,16 @@
 /*--------------------------------*- C++ -*----------------------------------*/
 
 dimensions      [1 -1 -2 0 0 0 0];
-internalField   uniform XXX;   // chamber static pressure (placeholder)
+internalField   uniform 4000000;   // chamber static pressure
 
 boundaryField
 {
     H2_annulus
     {
         type            totalPressure;
-        p0              uniform YYY;   // placeholder
+        p0              uniform 5400000;  //P_inj GH2
         gamma           1.4;
-        value           uniform XXX;
+        value           uniform 0;
     }
 
     LOX_centerHole
@@ -22,9 +22,9 @@ boundaryField
     {
         type            waveTransmissive;
         field           p;
-        gamma           1.4;
+        gamma           1.2;   //gamma CEA 1.2
         lInf            0.5;
-        value           uniform XXX;
+        value           uniform 0;
     }
 
     walls
@@ -32,3 +32,4 @@ boundaryField
         type            zeroGradient;
     }
 }
+
