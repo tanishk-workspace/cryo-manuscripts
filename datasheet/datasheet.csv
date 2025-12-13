@@ -1,60 +1,32 @@
-Category,Parameter Name,Symbol,Units,Notes,,,,,,,,
-Propellants,Fuel type,,,"e.g., RP-1, LH2, MMH",,,,LH2,LH2,,,
-Propellants,Oxidizer type,,,"e.g., LOX, N2O4",,,,LOX,LOX,,,
-Propellants,Mixture ratio,O/F,,Optimum or design choice,,,,5.90,6,,,
-Propellants,Fuel density,ρ_f,kg/m^3,At injection temperature,,,,,,,,
-Propellants,Oxidizer density,ρ_ox,kg/m^3,At injection temperature,,,,,,,,
-Propellants,Fuel temperature,T_f,K,Affects cooling & viscosity,,,,,,,,
-Propellants,Oxidizer temperature,T_ox,K,Affects pump requirements,,,,,,,,
-Propellants,Specific heat ratio,γ,,Hot gas value from CEA,,,,1.21,1.2,,,
-Propellants,Gas constant,R,J/kg·K,Hot gas R from CEA,,,,682,670,,,
-Propellants,Combustion temperature,Tc,K,From CEA,,,,3550,3570,,,
-Propellants,Characteristic velocity,c*,m/s,From CEA,,,,2110,2120,,,
-,,,,,,,,,,,,
-Performance,Required thrust,F,N,Design requirement,,,,0,"65,400+11,937=77,337",,,
-Performance,Chamber pressure,Pc,bar,Also affects Isp,,,,40*10e5,40,,,
-Performance,Exit pressure,Pe,bar,Depends on altitude,,,,0,0.076,,,
-Performance,Specific impulse,Isp,s,From CEA/nozzle design,,,,449s,450,,,
-Performance,Thrust coefficient,Cf,,For mass flow calculation,,,,,,,,
-Performance,Total mass flow rate,m_dot,kg/s,F = Cf * Pc * At,,,,45.3kg/s,14.818,,,
-,,,,,,,,,,,,
-Geometry,Throat area,At,m^2,From m_dot and c*,,,,,0.007854,,,
-Geometry,Throat diameter,Dt,m,Dt = 2 * sqrt(At / π),,,,,0.1,,,
-Geometry,Expansion ratio,ε,,Ae / At,,,,,200,,,
-Geometry,Exit area,Ae,m^2,From expansion ratio,,,,,1.570796,,,
-Geometry,Chamber volume,Vc,m^3,Used for L*,,,,,0.005498,,Dc=250mm,Ac=0.04909m2
-Geometry,Characteristic length,L*,m,Typically 0.8–1.8 m,,,,.70m,0.7,,,Ac?/At?=6.25
-Geometry,Chamber length,Lc,m,Geometry choice,,,,,0.112,,,rthroat=0.012�0.025 m
-Geometry,Convergence angle,θ_conv,deg,Typically 20–45°,,,,,,,,??bell=~7.5 m
-Geometry,Divergence angle,θ_div,deg,Typically 10–18° for bell nozzles,,,,,,,,rinlet=0.05�0.075 m
-,,,,,,,,,,,,exit half angle~4
-Injector,Injector type,,,"Impinging, pintle, coaxial",,,,,pintle,,,
-Injector,Injection pressure drop,ΔPinj,%Pc,Typically 20–30% Pc,,,,,30-35%,,,
-Injector,Fuel/oxidizer split,,%,Injector element distribution,,,,,,,,
-Injector,Droplet size,d32,µm,Atomization quality,,,,,,,,
-Injector,Number of elements,N_el,,Injector design variable,,,,,1,,,
-Injector,Injector face temperature,T_if,K,For cooling design,,,,,,,,
-,,,,,,,,,,,,
-Cooling,Cooling method,,,"Regen, film, ablative",,,,,,,,
-Cooling,Coolant mass flow fraction,m_dot_cool,%,Typically 2–10%,,,,,,,,
-Cooling,Chamber wall heat flux,q'',W/m^2,From heat transfer analysis,,,,,,,,
-Cooling,Allowable wall temperature,Tw,K,Material limit,,,,,,,,
-Cooling,Cooling channel hydraulic diameter,Dh,m,Regen cooling geometry,,,,,,,,
-Cooling,Coolant inlet temperature,T_c_in,K,Before cooling,,,,,,,,
-Cooling,Coolant outlet temperature,T_c_out,K,After heat pickup,,,,,,,,
-,,,,,,,,,,,,
-Structural,Material type,,,e.g., CuCrZr, Inconel 718,,,,,,
-Structural,Yield strength,σ_y,Pa,At operating temperature,,,,,,,,
-Structural,Ultimate strength,σ_u,Pa,Material property,,,,,,,,
-Structural,Safety factor,SF,,Typically 1.5–2.0,,,,,,,,
-Structural,Wall thickness,t,m,From hoop stress formula,,,,,,,,
-Structural,Thermal stress,σ_th,Pa,From ΔT and CTE,,,,,,,,
-,,,,,,,,,,,,
-Stability,Longitudinal modes,f_L,Hz,Acoustic stability,,,,,,,,
-Stability,Transverse modes,f_T,Hz,Related to combustion instabilities,,,,,,,,
-Stability,Damping method,,,"Baffles, resonators",,,,,,,,
-,,,,,,,,,,,,
-Operations,Burn duration,t_burn,s,Drives cooling design,,,,,,,,
-Operations,Throttle capability,,,Fixed or throttleable,,,,,,,,
-Operations,Startup method,,,"Pyro, spark, hypergolic",,,,,,,,
-Operations,Shutdown method,,,Valve closure characteristics,,,,,,,,
+Mixture ratio,,6
+Fuel density,kg/m^3,74
+Oxidizer density,kg/m^3,1030
+Fuel temperature,K,140
+Oxidizer temperature,K,160
+Specific heat ratio,,1.2
+Gas constant,J/kg·K,670
+Combustion temperature,K,3570
+Characteristic velocity,m/s,2120
+Chamber temprature,K,3550K
+Throat area,m^2,0.007854
+Throat diameter,m,0.1
+Expansion ratio,,200
+Exit area,m^2,1.570796
+Chamber volume,m^3,0.005498
+Characteristic length,m,0.7
+Chamber length,m,0.112
+,,
+Injector type,,pintle
+injection pressure fuel,bar,54
+injection pressure fuel,bar,52
+,,
+Required thrust,N,"65,400+11,937=77,337"
+Chamber pressure,bar,40
+Exit pressure,bar,0.076
+Specific impulse,s,450
+Thrust coefficient,,
+Total mass flow rate,kg/s,14.818
+,,
+Cycle,expander,
+cooling,regenrative,
+stage,upperstage,
