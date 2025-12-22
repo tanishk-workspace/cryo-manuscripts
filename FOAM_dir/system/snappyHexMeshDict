@@ -1,0 +1,115 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           |
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+castellatedMesh true;
+snap            true;
+addLayers       false; 
+
+geometry
+{
+    // FIX: Using 'file' keyword inside the dictionary
+    gh2_inlet   { type triSurfaceMesh; file "gh2_inlet.stl"; }
+    lox_inlet   { type triSurfaceMesh; file "lox_inlet.stl"; }
+    outlet      { type triSurfaceMesh; file "outlet.stl"; }
+    wall        { type triSurfaceMesh; file "wall.stl"; }
+    pintle_wall { type triSurfaceMesh; file "pintle_wall.stl"; }
+    symm        { type triSurfaceMesh; file "symm.stl"; }
+};
+
+castellatedMeshControls
+{
+    maxLocalCells 1000000;
+    maxGlobalCells 2000000;
+    minRefinementCells 10;
+    nCellsBetweenLevels 3;
+
+    features
+    (
+        { file "gh2_inlet.eMesh";   level 2; }
+        { file "lox_inlet.eMesh";   level 2; }
+        { file "outlet.eMesh";      level 2; }
+        { file "wall.eMesh";        level 3; }
+        { file "pintle_wall.eMesh"; level 4; }
+        { file "symm.eMesh";        level 1; }
+    );
+
+    refinementSurfaces
+    {
+        gh2_inlet   { level (2 2); }
+        lox_inlet   { level (2 2); }
+        outlet      { level (2 2); }
+        wall        { level (3 3); }
+        pintle_wall { level (4 4); } 
+        symm        { level (1 1); }
+    }
+
+    // --- THE FIX IS HERE ---
+    resolveSteepAngles  true;
+    resolveFeatureAngle 30; // This was the missing keyword causing the crash
+    // -----------------------
+
+    locationInMesh (-0.0153 0.0028 0.0); 
+
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch 3;
+    tolerance 2.0;
+    nSolveIter 30;
+    nRelaxIter 5;
+    nFeatureSnapIter 10;
+    explicitFeatureSnap true;
+}
+
+addLayersControls
+{
+    relativeSizes true;
+    layers
+    {
+        "wall|pintle_wall"
+        {
+            nSurfaceLayers 3;
+        }
+    }
+    expansionRatio 1.2;
+    finalLayerThickness 0.5;
+    minThickness 0.1;
+}
+
+
+meshQualityControls
+{
+    maxNonOrtho          65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave          80;
+    minVol              1e-13;
+    minTetQuality       1e-30;
+    minArea             -1;
+    minTwist            0.02;
+    minDeterminant      0.001;
+    minFaceWeight       0.02;
+    minVolRatio         0.01;
+    nSmoothScale        4;
+    nRelaxIter          5;
+    errorReduction      0.5;
+}
+
+mergeTolerance 1e-6;
+
+// ************************************************************************* //

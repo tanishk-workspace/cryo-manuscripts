@@ -1,0 +1,30 @@
+solid gh2_inlet
+ facet normal -1 0 0
+  outer loop
+   vertex -0.0158989 0.00296543 -1.26678e-06
+   vertex -0.0158989 0.00296543 3.26937e-06
+   vertex -0.0158989 0.00296996 3.26937e-06
+  endloop
+ endfacet
+ facet normal -1 0 0
+  outer loop
+   vertex -0.0158989 0.00296543 -1.26678e-06
+   vertex -0.0158989 0.00296996 3.26937e-06
+   vertex -0.0158989 0.00296996 -1.26678e-06
+  endloop
+ endfacet
+ facet normal -1 0 0
+  outer loop
+   vertex -0.0158989 0.00296089 -1.26678e-06
+   vertex -0.0158989 0.00296089 3.26937e-06
+   vertex -0.0158989 0.00296543 3.26937e-06
+  endloop
+ endfacet
+ facet normal -1 0 0
+  outer loop
+   vertex -0.0158989 0.00296089 -1.26678e-06
+   vertex -0.0158989 0.00296543 3.26937e-06
+   vertex -0.0158989 0.00296543 -1.26678e-06
+  endloop
+ endfacet
+endsolid gh2_inlet
