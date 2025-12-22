@@ -12,3 +12,5 @@ chemistrySolver ode;
 
 foamChemistryReader foamChemistryReader;
 chemistryThermoFile "chemistry/thermophysicalProperties";
+//READY
+
