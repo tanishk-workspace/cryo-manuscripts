@@ -1,47 +1,132 @@
-reactingCloud1Coeffs
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  v2312 / 9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
 {
-    parcelTypeId       1;
-    maxCo              0.5;
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      reactingCloudProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-    injectionModel     patchInjection;
+solution
+{
+    active          true;
+    transient       true;
+    calcFrequency   1;
+    maxCo           0.5;
+    cellValueSourceCorrection true;
 
-    patchInjectionCoeffs
+    interpolationSchemes
     {
-        patch                LOX_centerHole;
-        parcelsPerSecond     XXX;
-        massFlowRate         constant XXX;
-        U                    uniform (0 0 XXX);
-        T                    uniform XXX;
-        sizeDistribution
+        rho             cell;
+        U               cellPoint;
+        mu              cell;
+        T               cellPoint;
+        Cp              cell;
+    }
+
+    integrationSchemes
+    {
+        U               Euler;
+        T               Analytical;
+        m               Analytical;
+    }
+}
+
+constantProperties
+{
+    rho0            1141;     // LOX Density @ 95K
+    mu0             1.9e-4;   // LOX Viscosity
+    Cp0             1680;     // LOX Heat Capacity
+    T0              95;       // Injection Temp
+    P_ref           40e5;     // Chamber Pressure
+    V0              0.001;    // Volume (internal ref)
+    Hf              0;        // Heat of formation for O2
+}
+
+subModels
+{
+    injectionModels
+    {
+        model1
         {
-            type fixedValue;
-            value XXXe-6;   // placeholder droplet size
+            type            patchInjection;
+            patch           LOX_centerHole;
+            duration        10.0;            // Continuous injection
+            parcelsPerSecond 100000;         // High parcel count for stability
+            massFlowRate    constant 1.2;    // Adjust based on your thrust req.
+            U               uniform (0 0 20);
+            T               uniform 95;
+            
+            sizeDistribution
+            {
+                type        fixedValue;
+                value       100e-6;          // 100 micron initial drop size
+            }
         }
     }
 
-    breakupModel KHRT;
-    evaporationModel liquidEvaporation;
+    dispersionModel     stochasticDispersion; // Turbulence interaction
+
+    patchInteractionModel standardWallInteraction;
+
+    standardWallInteractionCoeffs
+    {
+        type            rebound;
+    }
+
+    heatTransferModel   RanzMarshall;
+
+    compositionModel    singleComponentMixture;
+
+    singleComponentMixtureCoeffs
+    {
+        liquidComponents ( O2 );
+        gasComponents    ( O2 );
+    }
+
+    phaseChangeModel    liquidEvaporation;
 
     liquidEvaporationCoeffs
     {
-        boilingTemperature   XXX;
-        latentHeat           XXX;
+        enthalpyModel   latentHeat;
+        relaxation      1.0;
+        boilingTemperature 150;  // Saturation temp @ 40 bar
+        latentHeat      213000;
     }
 
-    atomizationModel none;
-    dispersionModel  none;
+    breakupModel        KHRT;
 
-    submodels
+    KHRTCoeffs
     {
-        heatTransfer model1;
-        massTransfer model2;
+        B0              0.61;
+        B1              40;
+        tau             1;
+        cascading       false;
+        CRT             0.1;
+        msLimit         0.2;
+        WeberLimit      12;
     }
 
-    constantProperties
+    momentumTransferModel drag;
+
+    dragModel           Sphere;
+
+    surfaceTensionModel constant;
+
+    constantSurfaceTensionCoeffs
     {
-        rho0            XXX;
-        mu0             XXX;
-        Cp0             XXX;
-        Hf              XXX;
+        sigma           0.013; // Surface tension LOX/O2
     }
 }
+
+cloudFunctions {}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
