@@ -1,12 +1,12 @@
 dimensions      [0 2 -2 0 0 0 0];
-internalField   uniform XXX;
+internalField   uniform 0.05;
 
 boundaryField
 {
     H2_annulus
     {
-        type fixedValue;
-        value uniform XXX;
+        type uniform;
+        value uniform 294;
     }
 
     LOX_centerHole
@@ -22,6 +22,7 @@ boundaryField
     walls
     {
         type kqRWallFunction;
-        value uniform XXX;
+        value uniform 294;
     }
 }
+
