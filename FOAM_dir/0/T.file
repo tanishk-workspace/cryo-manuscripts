@@ -1,18 +1,18 @@
 dimensions      [0 0 0 1 0 0 0];
-internalField   uniform XXX;   // placeholder chamber temperature
+internalField   uniform 3570;   // placeholder chamber temperature
 
 boundaryField
 {
     H2_annulus
     {
         type            fixedValue;
-        value           uniform YYY;  // GH2 temperature placeholder
+        value           uniform 210;  // GH2 temperature placeholder
     }
 
     LOX_centerHole
     {
         type            fixedValue;
-        value           uniform ZZZ;  // LOX droplet source temperature placeholder
+        value           uniform 95;  // LOX droplet source temperature placeholder
     }
 
     outlet
@@ -25,3 +25,4 @@ boundaryField
         type            zeroGradient;
     }
 }
+
