@@ -58,7 +58,7 @@ subModels
         model1
         {
             type            patchInjection;
-            patch           LOX_centerHole;
+            patch           lox_inlet;
             duration        10.0;            // Continuous injection
             parcelsPerSecond 100000;         // High parcel count for stability
             massFlowRate    constant 1.2;    // Adjust based on your thrust req.
@@ -130,3 +130,4 @@ subModels
 cloudFunctions {}
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
