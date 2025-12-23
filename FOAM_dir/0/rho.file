@@ -6,6 +6,7 @@ boundaryField
     H2_annulus      { type calculated; value uniform 4.74; } // Cold inlet
     LOX_centerHole  { type calculated; value uniform 1.88; }
     outlet          { type calculated; value uniform 1.88; }
-    walls           { type zeroGradient; }l
+    walls           { type zeroGradient; }
 }
+
 
