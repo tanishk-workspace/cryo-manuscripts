@@ -1,7 +1,0 @@
-transportModel sutherland;
-
-sutherlandCoeffs
-{
-    As        XXX;
-    Ts        XXX;
-}
