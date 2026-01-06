@@ -1,17 +1,18 @@
 dimensions      [0 0 -1 0 0 0 0];
-internalField   uniform XXX;
+internalField   uniform 100;
 
 boundaryField
 {
     H2_annulus
     {
         type fixedValue;
-        value uniform XXX;
+        value uniform 45084;
     }
 
     LOX_centerHole
     {
-        type zeroGradient;
+        type fixedValue;
+        value uniform 45084;
     }
 
     outlet
@@ -22,6 +23,7 @@ boundaryField
     walls
     {
         type omegaWallFunction;
-        value uniform XXX;
+        value uniform 45084;
     }
 }
+

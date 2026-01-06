@@ -8,7 +8,7 @@ boundaryField
     H2_annulus
     {
         type            totalPressure;
-        p0              uniform 5400000;  //P_inj GH2
+        p0              uniform 4500000;  //P_inj GH2
         gamma           1.4;
         value           uniform 0;
     }
@@ -32,5 +32,6 @@ boundaryField
         type            zeroGradient;
     }
 } //OK
+
 
 

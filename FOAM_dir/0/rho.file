@@ -1,10 +1,12 @@
 dimensions      [1 -3 0 0 0 0 0];
-internalField   uniform XXX;
+internalField   uniform 1.88;
 
 boundaryField
 {
-    defaultFaces
-    {
-        type zeroGradient;
-    }
+    H2_annulus      { type calculated; value uniform 4.74; } // Cold inlet
+    LOX_centerHole  { type calculated; value uniform 1.88; }
+    outlet          { type calculated; value uniform 1.88; }
+    walls           { type zeroGradient; }
 }
+
+

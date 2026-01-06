@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           |
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeaturesDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaces
+(
+    "gh2_inlet.stl"
+    "lox_inlet.stl"
+    "outlet.stl"
+    "wall.stl"
+    "pintle_wall.stl"
+    "symm.stl"
+);
+
+extractionMethod    extractFromSurface;
+
+// Try the most explicit naming convention for the dev branch
+extractFromSurfaceCoeffs
+{
+    includedAngle   150;
+}
+
+// Some dev versions look for this generic name instead
+extractionMethodCoeffs
+{
+    includedAngle   150;
+}
+
+// Just in case your build expects it at the top level alongside the others
+includedAngle   150;
+
+writeObj    yes;
+
+// ************************************************************************* //
